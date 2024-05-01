@@ -27,16 +27,19 @@ web-status-cli <url> [options]
 ```bash
 web-status-cli -h | --help
 ```
+
 - Displayes the help menu.
 
 ```bash
 web-status-cli -v | --version
 ```
+
 - Displays versioning information.
 
 ```bash
 web-status-cli -d | --detailed
 ```
+
 - Displays a more detailed status of the website including the status code and the response time.
 
 # Example

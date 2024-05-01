@@ -33,11 +33,7 @@ async function checkWebsite(url, opts) {
   } catch (err) {
     table.push([
       theme.text(url),
-      theme.error(
-        err.response
-          ? `${response.status} ${err.response.statusText}`
-          : err.message,
-      ),
+      theme.error(err.response ? `${response.status} ${err.response.statusText}` : err.message),
     ]);
   }
 
