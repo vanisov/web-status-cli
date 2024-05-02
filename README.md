@@ -19,27 +19,26 @@ npx web-status-cli
 # Usage
 
 ```bash
-web-status-cli <url> [options]
+web-status <url> [options]
 ```
 
 ## List of Options
 
 ```bash
-web-status-cli -h | --help
+web-status -h | --help
 ```
 
 - Displayes the help menu.
 
 ```bash
-web-status-cli -v | --version
+web-status -v | --version
 ```
 
 - Displays versioning information.
 
 ```bash
-web-status-cli -d | --detailed
+web-status -d | --detailed
 ```
 
 - Displays a more detailed status of the website including the status code and the response time.
 
-# Example
