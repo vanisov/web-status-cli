@@ -20,10 +20,7 @@
   "dependencies": {
     "axios": "^1.6.8",
     "chalk": "4",
-    "cli-table": "^0.3.11",
     "commander": "^12.0.0",
-    "esm": "^3.2.25",
-    "prettier": "^3.2.5",
-    "talisman": "^1.1.4"
+    "prettier": "^3.2.5"
   }
 }
