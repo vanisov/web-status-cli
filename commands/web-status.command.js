@@ -1,7 +1,7 @@
-const axios = require("axios");
-const theme = require("../lib/theme");
-const { createTable } = require("../lib/tables");
+const { theme } = require("../lib/theme");
+const logFormatter = require("../lib/log-template");
 const statusResponse = require("../lib/status-response");
+const { default: axios } = require("axios");
 
 const log = console.log;
 
@@ -11,33 +11,22 @@ const log = console.log;
  *  @returns {Promise<void>}
  * */
 async function checkWebsite(url, opts) {
-  // Check if the URL is provided.
-  if (!url) {
-    log(error("Please provide a URL."));
-  }
-
-  let data = [];
-
-  const tableType = opts.detailed ? "detailed" : "simple";
-
-  // Create table instances
-  const table = createTable(tableType);
-
   try {
+    // Start the timer
+    const startTime = Date.now();
+    // Make the request
     const res = await axios.get(url);
+    // Calculate the time spent
+    const secSpent = (Date.now() - startTime) / 1000;
 
-    data = statusResponse(res, opts.detailed);
+    // Get the status data
+    const data = statusResponse(res, opts.detailed, secSpent, opts.headers);
 
-    log(theme.text(data));
-    // table.push(data);
+    // Log the data
+    logFormatter(data);
   } catch (err) {
-    table.push([
-      theme.text(url),
-      theme.error(err.response ? `${response.status} ${err.response.statusText}` : err.message),
-    ]);
+    log(theme.error(`There was an error: ${err.message}`));
   }
-
-  // log(table.toString());
 }
 
 module.exports = checkWebsite;
