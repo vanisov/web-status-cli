@@ -1,8 +1,11 @@
 #! /usr/bin/env node
 const { Command } = require("commander");
 const checkWebsite = require("./commands/web-status.command");
+const updateHandler = require("./lib/update-handler");
 
 const program = new Command();
+
+updateHandler();
 
 program.name("web-status").usage("[options]").description("Check the status of a website.").version("1.0.0");
 
