@@ -17,10 +17,14 @@ program
   .addHelpText("after", `\nExample: $ web-status https://example.com`);
 
 program
-  // display help message when no arguments are passed
   .argument("<url>", "URL of the website to check")
   .option("-d, --detailed", "Log the status of the website")
   .action(checkWebsite)
   .description("Check the status of a website.");
+
+// display help message when no arguments are passed
+if (!process.argv.slice(2).length) {
+  program.help();
+}
 
 program.parse();
