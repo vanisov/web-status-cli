@@ -7,7 +7,12 @@ const program = new Command();
 
 updateHandler();
 
-program.name("web-status").usage("[options]").description("Check the status of a website.").version("1.0.0");
+program
+  .name("web-status")
+  .usage("[options]")
+  .description("Check the status of a website.")
+  .version("1.0.0")
+  .alias("ws");
 
 program
   .argument("<url>", "URL of the website to check")
