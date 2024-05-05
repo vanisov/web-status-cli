@@ -35,7 +35,7 @@ web-status -h | --help
 - Displayes the help menu.
 
 ```bash
-web-status -v | --version
+web-status -V | --version
 ```
 
 - Displays versioning information.
