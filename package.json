@@ -24,7 +24,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "web-status": "./index.cjs"
+    "web-status": "./index.js",
+    "ws": "./index.js"
   },
   "keywords": [
     "cli",
